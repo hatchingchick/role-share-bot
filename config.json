@@ -1,0 +1,72 @@
+{
+    
+  "roles": [
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209530559370625044",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1298099054009520191"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1284528818320707697",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1298092615711068210"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209494251243700224",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1298092615711068210"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209494251243700224",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1301121127787003914"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209494251243700224",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1301174222558593154"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209494251243700224",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1302596765920395295"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1209494251243700224",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1302596823231369278"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1301124438355607573",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1301121127787003914"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1301175094978023424",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1301174222558593154"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1302601177979945020",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1302596765920395295"
+    },
+    {
+      "checkServerId": "1193327216642244778",
+      "checkRoleId": "1302601220447408183",
+      "targetServerId": "1297748007550189628",
+      "targetRoleId": "1302596823231369278"
+    }
+  ],
+  "defaultRoleId": "1299521973503922176"
+}
