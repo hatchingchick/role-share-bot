@@ -18,7 +18,7 @@ bot.on('ready', () => {
     console.log(`[Client] ${bot.user.tag} is working`);
 });
 
-// Function to assign target role
+
 const assignTargetRole = async (member) => {
     for (const { checkServerId, checkRoleId, targetServerId, targetRoleId } of rolesConfig) {
         const checkGuild = bot.guilds.cache.get(checkServerId);
@@ -36,7 +36,7 @@ const assignTargetRole = async (member) => {
         const targetMember = await targetGuild.members.fetch(member.id).catch(() => null);
 
         if (checkMember && checkMember.roles.cache.has(checkRoleId)) {
-            // メンバーがチェックサーバーで役割を持っている場合
+       
             if (targetMember && !targetMember.roles.cache.has(targetRoleId)) {
                 await targetMember.roles.add(targetRoleId).catch(console.error);
                 console.log(`ロールを付与しました: ${targetMember.user.tag} に ${targetRoleId}`);
@@ -45,7 +45,7 @@ const assignTargetRole = async (member) => {
     }
 };
 
-// New member joins
+
 bot.on('guildMemberAdd', async (member) => {
     const targetGuild = bot.guilds.cache.get(member.guild.id);
     if (targetGuild) {
@@ -60,7 +60,7 @@ bot.on('guildMemberAdd', async (member) => {
     await assignTargetRole(member);
 });
 
-// Member updates (role changes)
+
 bot.on('guildMemberUpdate', async (oldMember, newMember) => {
     console.log(`guildMemberUpdate triggered for ${newMember.user.tag}`);
 
@@ -72,16 +72,16 @@ bot.on('guildMemberUpdate', async (oldMember, newMember) => {
     }
 });
 
-// Member leaves the server
+
 bot.on('guildMemberRemove', async (member) => {
     if (member.guild.id === rolesConfig[0].checkServerId) {
         console.log(`guildMemberRemove triggered for ${member.user.tag}`);
-        // ターゲットロールを削除
+       
         await assignOrRemoveTargetRole(member, 'remove');
     }
 });
 
-// Member updates (role changes)
+
 bot.on('guildMemberUpdate', async (oldMember, newMember) => {
     console.log(`guildMemberUpdate triggered for ${newMember.user.tag}`);
 
@@ -94,7 +94,6 @@ bot.on('guildMemberUpdate', async (oldMember, newMember) => {
         }
     }
 
-    // ロールが外された場合の処理
     if (removedRoles.size > 0) {
         for (const { checkRoleId } of rolesConfig) {
             if (removedRoles.has(checkRoleId)) {
@@ -123,13 +122,13 @@ const assignOrRemoveTargetRole = async (member, action) => {
         const targetMember = await targetGuild.members.fetch(member.id).catch(() => null);
 
         if (checkMember && checkMember.roles.cache.has(checkRoleId)) {
-            // メンバーがチェックサーバーで役割を持っている場合
+         
             if (targetMember && !targetMember.roles.cache.has(targetRoleId)) {
                 await targetMember.roles.add(targetRoleId).catch(console.error);
                 console.log(`ロールを付与しました: ${targetMember.user.tag} に ${targetRoleId}`);
             }
         } else {
-            // メンバーがチェックサーバーで役割を持っていない場合
+         
             if (targetMember && targetMember.roles.cache.has(targetRoleId)) {
                 await targetMember.roles.remove(targetRoleId).catch(console.error);
                 console.log(`ターゲットロールを外しました: ${targetMember.user.tag} から ${targetRoleId}`);
